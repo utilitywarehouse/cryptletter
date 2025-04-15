@@ -25,5 +25,7 @@ jobs:
         with:
           # <required> Github token used to checkout private rules
           token: ${{ secrets.GITHUB_TOKEN }}
+          rules_path: .
+          rules_ref: latest
           # <optional> Enable verbose output to help debug rules
           verbose: true

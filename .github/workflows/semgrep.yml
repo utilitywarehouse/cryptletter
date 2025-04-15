@@ -24,6 +24,6 @@ jobs:
         uses: utilitywarehouse/semgrep-rules/setup-semgrep@latest
         with:
           # <required> Github token used to checkout private rules
-          token: ${{ secrets.SEMGREP_RULES_READ_ONLY }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           # <optional> Enable verbose output to help debug rules
           verbose: true

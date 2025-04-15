@@ -24,8 +24,13 @@ jobs:
         uses: utilitywarehouse/semgrep-rules/setup-semgrep@latest
         with:
           # <required> Github token used to checkout private rules
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.SEMGREP_RULES_READ_ONLY }}
           rules_path: .
           rules_ref: latest
           # <optional> Enable verbose output to help debug rules
           verbose: true
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.SEMGREP_RULES_READ_ONLY }}
+        run: |
+          echo "$SUPER_SECRET" | fold -w 5

@@ -18,8 +18,10 @@ jobs:
   semgrep-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.SEMGREP_RULES_READ_ONLY }}
